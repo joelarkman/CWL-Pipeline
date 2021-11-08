@@ -1,0 +1,8 @@
+# Raw input
+
+fastq_forward:
+  class: File
+  path: /home/cwlrunner/projects/cwl_pipeline/fastqs/256871-19-D19-55408-KC-BRCA-007_S19_L001_R2_001.fastq.gz
+fastq_reverse:
+  class: File
+  path: /home/cwlrunner/projects/cwl_pipeline/fastqs/256871-19-D19-55408-KC-BRCA-007_S19_L001_R1_001.fastq.gz
