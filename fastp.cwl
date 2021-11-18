@@ -8,6 +8,7 @@ requirements:
     listing:
      - $(inputs.fastq_forward)
      - $(inputs.fastq_reverse)
+     - $(inputs.adapter_fasta)
   InlineJavascriptRequirement: {}
   
 inputs:
@@ -47,6 +48,12 @@ inputs:
     inputBinding:
       prefix: '--dedup'
       position: 10
+  adapter_fasta:
+    type: File?
+    inputBinding:
+      valueFrom: $(self.basename)
+      prefix: '--adapter_fasta'
+      position: 11
       
 arguments:
   - valueFrom: $(inputs.fastq_forward.nameroot.split('.fastq')[0]+'.fastp_filtered.fastq.gz')
@@ -63,7 +70,7 @@ arguments:
     position: 6
   - valueFrom: 'fastp.html'
     prefix: '--html'
-    position: 11
+    position: 12
       
 outputs:
   forward_unpaired_fastq: 
